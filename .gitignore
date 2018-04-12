@@ -1,0 +1,9 @@
+# All folders ignore
+
+Pods/
+
+**/.DS_Store
+**/xcuserdata
+**/xcshareddata
+
+# Ignore specific files
