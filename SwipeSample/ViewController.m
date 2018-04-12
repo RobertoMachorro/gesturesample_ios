@@ -35,7 +35,7 @@
 - (void)setMessage:(NSString*)message {
 	self.gestureMessage.alpha = 1;
 	self.gestureMessage.text = message;
-	[UIView animateWithDuration:0.95 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+	[UIView animateWithDuration:0.95 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		self.gestureMessage.alpha = 0;
 	} completion:nil];
 }
