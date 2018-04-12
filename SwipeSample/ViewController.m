@@ -32,6 +32,14 @@
 	// Dispose of any resources that can be recreated.
 }
 
+- (void)setMessage:(NSString*)message {
+	self.swipeMessage.alpha = 1;
+	self.swipeMessage.text = message;
+	[UIView animateWithDuration:0.95 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		self.swipeMessage.alpha = 0;
+	} completion:nil];
+}
+
 #pragma mark - Swipe Gestures
 
 - (void)addTapGestureWithAction:(SEL)method {
@@ -40,7 +48,7 @@
 }
 
 - (IBAction)tapGesture:(id)sender {
-	self.swipeMessage.text = @"Tap";
+	[self setMessage:@"Tap"];
 }
 
 - (void)addSwipeWithDirection:(UISwipeGestureRecognizerDirection)direction action:(SEL)method {
@@ -50,19 +58,19 @@
 }
 
 - (IBAction)swipeLeft:(UISwipeGestureRecognizer*)sender {
-	self.swipeMessage.text = @"Left";
+	[self setMessage:@"Left"];
 }
 
 - (IBAction)swipeRight:(UISwipeGestureRecognizer*)sender {
-	self.swipeMessage.text = @"Right";
+	[self setMessage:@"Right"];
 }
 
 - (IBAction)swipeUp:(UISwipeGestureRecognizer*)sender {
-	self.swipeMessage.text = @"Up";
+	[self setMessage:@"Up"];
 }
 
 - (IBAction)swipeDown:(UISwipeGestureRecognizer*)sender {
-	self.swipeMessage.text = @"Down";
+	[self setMessage:@"Down"];
 }
 
 @end
