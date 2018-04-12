@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
+	[self addTapGestureWithAction:@selector(tapGesture:)];
 	[self addSwipeWithDirection:UISwipeGestureRecognizerDirectionLeft action:@selector(swipeLeft:)];
 	[self addSwipeWithDirection:UISwipeGestureRecognizerDirectionRight action:@selector(swipeRight:)];
 	[self addSwipeWithDirection:UISwipeGestureRecognizerDirectionUp action:@selector(swipeUp:)];
@@ -32,6 +33,15 @@
 }
 
 #pragma mark - Swipe Gestures
+
+- (void)addTapGestureWithAction:(SEL)method {
+	UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:method];
+	[self.view addGestureRecognizer:tapGesture];
+}
+
+- (IBAction)tapGesture:(id)sender {
+	self.swipeMessage.text = @"Tap";
+}
 
 - (void)addSwipeWithDirection:(UISwipeGestureRecognizerDirection)direction action:(SEL)method {
 	UISwipeGestureRecognizer *gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:method];
