@@ -10,7 +10,7 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) IBOutlet UILabel *swipeMessage;
+@property (strong, nonatomic) IBOutlet UILabel *gestureMessage;
 
 @end
 
@@ -33,10 +33,10 @@
 }
 
 - (void)setMessage:(NSString*)message {
-	self.swipeMessage.alpha = 1;
-	self.swipeMessage.text = message;
+	self.gestureMessage.alpha = 1;
+	self.gestureMessage.text = message;
 	[UIView animateWithDuration:0.95 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-		self.swipeMessage.alpha = 0;
+		self.gestureMessage.alpha = 0;
 	} completion:nil];
 }
 
