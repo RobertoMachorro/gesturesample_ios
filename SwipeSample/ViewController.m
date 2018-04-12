@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *swipeMessage;
+
 @end
 
 @implementation ViewController
@@ -38,19 +40,19 @@
 }
 
 - (IBAction)swipeLeft:(UISwipeGestureRecognizer*)sender {
-	NSLog(@"Swipe Left: %@", sender);
+	self.swipeMessage.text = @"Left";
 }
 
 - (IBAction)swipeRight:(UISwipeGestureRecognizer*)sender {
-	NSLog(@"Swipe Right: %@", sender);
+	self.swipeMessage.text = @"Right";
 }
 
 - (IBAction)swipeUp:(UISwipeGestureRecognizer*)sender {
-	NSLog(@"Swipe Up: %@", sender);
+	self.swipeMessage.text = @"Up";
 }
 
 - (IBAction)swipeDown:(UISwipeGestureRecognizer*)sender {
-	NSLog(@"Swipe Down: %@", sender);
+	self.swipeMessage.text = @"Down";
 }
 
 @end
